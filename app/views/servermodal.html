@@ -1,0 +1,67 @@
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" ng-click="resetModel('srv')" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="exampleModalLabel">Server Information</h4>
+            </div>
+            <div class="modal-body">
+              <form name="serverform" class="form">
+              <div class="row">
+              <div class="col-xs-6">
+                 <div class="form-group form-group-sm">
+                  <div class="col-sm-10" ng-class="{'has-error': serverform.serverName.$error.pattern}">
+                    <label for="serverName">Server Name *</label>
+                    <input type="text" class="form-control input-sm" name="serverName" ng-model="server.server_name"
+                    ng-pattern="/^[a-zA-Z0-9_]*$/" required />
+                    <span class="help-block h6" ng-show="serverform.serverName.$error.pattern">Alphanumeric and underscores only</span>
+                  </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <div class="col-sm-10" ng-class="{'has-error': serverform.keyName.$error.pattern}">
+                    <label for="keyname">Key Name *</label>
+                    <input type="text" class="form-control input-sm" name="keyName" ng-model="server.key_name" 
+                    ng-pattern="/^[a-zA-Z0-9_]*$/" required />
+                    <span class="help-block h6" ng-show="serverform.keyName.$error.pattern">Alphanumeric and underscores only</span>
+                  </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <div class="col-sm-10">
+                    <label for="image">Disk Image *</label>
+                    <select class="form-control input-sm" name="imageName" ng-model="server.image_name"
+                    ng-options="value for (name, value) in images" required>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group form-group-sm">
+                  <div class="col-sm-10">
+                    <label for="flavorname">Server Flavor *</label>
+                    <select class="form-control input-sm" name="flavorName" ng-model="server.flavor_name"
+                    ng-options="value for (name, value) in flavors" required>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="form-group">
+                  <div class="col-sm-10">
+                    <label for="userdata">User Data (optional)</label>
+                    <textarea class="form-control" name="userdata" ng-model="server.user_data" rows="10"></textarea>
+                  </div>
+                </div>
+              </div>      
+              </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary"
+              data-dismiss="modal"
+              ng-class="{'disabled': !serverform.$valid || serverform.$pristine}" 
+              ng-click="addServer()">Add</button>
+              <span class="help-block h6">* denotes the field is required</span>
+            </div> 
+          </div>
+      </div>
+    </div>

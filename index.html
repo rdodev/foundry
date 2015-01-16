@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="foundryApp" class="no-js">
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rackspace::Orchestration::Foundry</title>
+  </head>
+  <body>
+    <div class="container-fluid theme-showcase">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h2>Foundry: a Rackspace-flavored OpenStack™ Heat Template Generator</h2>
+        </div>
+      </div>
+      <div ng-view>
+      </div>
+    </div>
+
+    <!-- libs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.0.2/js-yaml.min.js"></script>
+    <script async="" src="https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.1.6/ZeroClipboard.min.js"></script>
+    <script src="//rawgit.com/asafdav/ng-clip/master/src/ngClip.js"></script>
+
+
+    <!-- app -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/template.js"></script>
+    <script src="app/controllers/resources.js"></script>
+    <script src="app/controllers/main.js"></script>
+  </body>
+</html>
