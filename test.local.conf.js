@@ -15,6 +15,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'test/libs/angular.min.js',
+      'test/libs/angular-mocks.js',
+      'test/libs/ZeroClipboard.min.js',
+      'test/libs/ngClip.js',
       'app/*.js',
       'app/controllers/*.js',
       'test/*Test.js'
@@ -52,7 +56,7 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
 
     // start these browsers
