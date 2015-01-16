@@ -9,7 +9,8 @@ angular.module('foundryApp')
     $scope.format = 'JSON';
 
     $scope.generate = function () {
-        $scope.templateObj = {heat_template_version: '2014-10-16'};
+        $scope.templateObj = {};
+        $scope.templateObj['heat_template_version'] = '2014-10-16';
         $scope.templateObj['description'] = $rootScope.template['description'];
         $scope.templateObj['resources'] = {};
         $scope.templateObj['outputs'] = {};

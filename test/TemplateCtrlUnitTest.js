@@ -21,6 +21,22 @@ describe('TemplateCtrl Unit Test', function() {
     });
   }));
 
+  describe('getJSON', function () {
+    it('produces good JSON', function () {
+      var expected = '{\n  "heat_template_version": "2014-10-16",\n  "description": "test descr",\n  "resources": {},\n  "outputs": {}\n}'
+      scope.getJSON();
+      expect(rootScope.output).toEqual(expected);
+    });
+  });
+  
+  describe('getYAML', function () {
+    it('produces good yaml', function () {
+      var expected = 'heat_template_version: "2014-10-16"\ndescription: test descr\nresources: {}\noutputs: {}\n';
+      scope.getYAML();
+      expect(rootScope.output).toEqual(expected);
+    });
+  });
+
   describe('saveToFile', function () {
     it('saves with correct params', function () {
       scope.format = 'YAML';
