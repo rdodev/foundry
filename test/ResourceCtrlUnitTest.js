@@ -61,4 +61,32 @@ describe('ResourcesCtrl Unit Test', function() {
         expect(lb.protocol).toEqual('HTTP');
     });
   });
+
+  describe('resetModel', function () {
+    it('should reset server model', function () {
+      //set some data
+      scope.server.server_name = 'sname';
+      scope.server.key_name = 'kname';
+      scope.server.image_name = 'iname';
+      scope.server.flavor_name = 'fname';
+      scope.server.user_data = 'usrdata';
+      //add to scope
+      scope.addServer();
+      //check model was reset
+      expect(scope.server).toEqual({});
+      expect(scope.serverform).toBeNull();
+    });
+
+    it('should reset lb model correctly', function () {
+      //set some data
+      scope.lb.lbname = 'lbname';
+      scope.lb.port = '8000';
+      scope.lb.protocol = 'HTTP';
+      //add to scope
+      scope.addLB();
+      //check model was reset
+      expect(scope.lb).toEqual({});
+      expect(scope.lbform).toBeNull();
+    });
+  });
 });

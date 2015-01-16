@@ -34,4 +34,15 @@ describe('MainCtrl Unit Test', function() {
       expect(rootScope.resources).toEqual([]);
     });
   });
+
+  describe('reset', function () {
+    it('should reset the whole shebbang', function () {
+      spyOn(window, 'confirm').and.callFake(function () {return true;});
+      rootScope.reset();
+      expect(rootScope.template).toEqual({});
+      expect(rootScope.servers).toEqual([]);
+      expect(rootScope.lbs).toEqual([]);
+      expect(rootScope.resources).toEqual([]);
+    });
+  });
 });
