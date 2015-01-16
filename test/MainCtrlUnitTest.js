@@ -15,7 +15,7 @@ describe('MainCtrl Unit Test', function() {
     });
   }));
 
-  describe('new Main scope', function() {
+  describe('new Main scope', function () {
     it('Initially rootScope properties shouldnt be initialized', function () {
       expect(rootScope.template).toBeUndefined();
       expect(rootScope.servers).toBeUndefined();
@@ -24,7 +24,7 @@ describe('MainCtrl Unit Test', function() {
     });
   });
 
-  describe('init scope', function() {
+  describe('init scope', function () {
     it('Initially rootScope properties shouldnt be initialized', function () {
       scope.description = 'test description';
       scope.addResources();
