@@ -20,6 +20,7 @@ module.exports = function(config) {
       'test/libs/ZeroClipboard.min.js',
       'test/libs/ngClip.js',
       'test/libs/FileSaver.js',
+      'test/libs/js-yaml.min.js',
       'app/*.js',
       'app/controllers/*.js',
       'test/*Test.js'
