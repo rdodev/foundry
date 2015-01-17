@@ -2,19 +2,14 @@
   "name": "foundry",
   "version": "0.0.1",
   "description": "A Rackspace-Flvored OpenStack™ Heat Template Builder",
-  "main": "index.html",
-  "directories": {
-    "test": "test"
-  },
   "dependencies": {
     "jasmine-core": "~2.1.3",
     "karma": "~0.12.31",
-    "karma-jasmine": "~0.3.4",
-    "karma-phantomjs-launcher": "0.1.4"
+    "karma-jasmine": "~0.3.4"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start test.ci.conf.js"
+    "test": "karma start test.ci.conf.js"
   },
   "repository": {
     "type": "git",
