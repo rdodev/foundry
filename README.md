@@ -1,5 +1,5 @@
-# Foundry
-### A Rackspace-Flavored OpenStack™ Heat Web-Based Template Builder [![Build Status](https://travis-ci.org/rdodev/foundry.svg?branch=master)](https://travis-ci.org/rdodev/foundry)
+# Foundry [![Build Status](https://travis-ci.org/rdodev/foundry.svg)](https://travis-ci.org/rdodev/foundry)
+### A Rackspace-Flavored OpenStack™ Heat Web-Based Template Builder
 ---
 
 ## Intro:
