@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "karma start test.ci.conf.js"
+    "test": "./node_modules/karma/bin/karma start test.ci.conf.js"
   },
   "repository": {
     "type": "git",
