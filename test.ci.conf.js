@@ -19,6 +19,8 @@ module.exports = function(config) {
       'test/libs/angular-mocks.js',
       'test/libs/ZeroClipboard.min.js',
       'test/libs/ngClip.js',
+      'test/libs/FileSaver.js',
+      'test/libs/js-yaml.min.js',
       'app/*.js',
       'app/controllers/*.js',
       'test/*Test.js'
@@ -66,6 +68,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true
   });
 };
