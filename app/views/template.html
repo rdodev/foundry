@@ -9,7 +9,6 @@
     <div class="button-group pull-right">
       <button type="button" class="btn btn-default" ng-click="back()">Add Resources</button>
       <button type="button" class="btn btn-danger" ng-click="reset()">Reset</button>
-      <!--button type="button" class="btn btn-success" ng-click="generate()">Get it!</button-->
     </div>
   </div>
 </div>
@@ -18,7 +17,7 @@
     <h3 class="panel-title">Get Template</h3>
   </div>
   <div class="panel-body">
-    <ul class="nav nav-pills pull-left">
+    <ul class="nav nav-pills pull-left" style="margin-right: 1em;">
       <li role="presentation" ng-class="{'active': format == 'JSON'}">
         <a href="" ng-click="getJSON()">JSON</a>
       </li>
