@@ -13,7 +13,7 @@ A small web app that was born out of both, necessity and an "out-of-the-box" pro
 5. Profit!
 
 ## To Use On The Web:
-The app can be seen and used here [https://foundry.rocks](https://foundry.rocks)
+The app can be seen and used here [https://heat.foundry.rocks](https://heat.foundry.rocks)
 
 ## To Develop:
 1. Clone this repository
