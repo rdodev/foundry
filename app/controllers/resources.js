@@ -35,8 +35,8 @@ angular.module('foundryApp')
     ];
     /* end dropdown data */
     
-    /* "enums" */
-    $scope.resourceTypes = {
+    /* "global" types */
+    $rootScope.resourceTypes = {
         nova:   'OS::Nova::Server',
         lb:     'Rackspace::Cloud::LoadBalancer',
         swift:  'OS::Swift::Container' 
@@ -49,7 +49,7 @@ angular.module('foundryApp')
 
     $scope.addServer = function () {
         var srvrObj = {};
-        srvrObj['resType']      = $scope.resourceTypes.nova;
+        srvrObj['resType']      = $rootScope.resourceTypes.nova;
         srvrObj['server_name']  = $scope.server.server_name;
         srvrObj['key_name']     = $scope.server.key_name;
         srvrObj['image_name']   = $scope.server.image_name;
@@ -69,7 +69,7 @@ angular.module('foundryApp')
     $scope.addLB = function () {
         //console.dir($scope.lb);
         var lbObj           = {};
-        lbObj['resType']    = $scope.resourceTypes.lb;
+        lbObj['resType']    = $rootScope.resourceTypes.lb;
         lbObj['lb_name']    = $scope.lb.lbname;
         lbObj['port']       = $scope.lb.port;
         lbObj['protocol']   = $scope.lb.protocol;
@@ -81,11 +81,12 @@ angular.module('foundryApp')
     };
 
     $scope.addContainer = function () {
-        var cntObj              = {};
-        cntObj['resType']       = $scope.resourceTypes.swift;
-        cntObj['CDN']           = $scope.container.CDN;
-        cntObj['aclReadList']   = $scope.container.aclRead;
-        cntObj['aclWriteList']  = $scope.container.aclWrite;
+        var cntObj                  = {};
+        cntObj['resType']           = $rootScope.resourceTypes.swift;
+        cntObj['container_name']    = $scope.container.container_name;
+        cntObj['CDN']               = $scope.container.CDN;
+        cntObj['aclRead']           = $scope.container.aclRead;
+        cntObj['aclWrite']          = $scope.container.aclWrite;
         $rootScope.containers.push(cntObj);
         $rootScope.resources.push(cntObj);
         $scope.resetModel('swift');

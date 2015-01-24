@@ -16,11 +16,14 @@ angular.module('foundryApp')
         $scope.templateObj['outputs'] = {};
         angular.forEach($rootScope.resources, function (res) {
             switch (res.resType) {
-                case 'OS::Nova::Server':
+                case $rootScope.resourceTypes.nova:
                     $scope.addServerToTemplate($scope.templateObj, res);
                     break;
-                case 'Rackspace::Cloud::LoadBalancer':
+                case $rootScope.resourceTypes.lb:
                     $scope.addLBToTemplate($scope.templateObj, res);
+                    break;
+                case $rootScope.resourceTypes.swift:
+                    $scope.addContainerToTemplate($scope.templateObj, res);
                     break;
                 default:
                     break;
@@ -66,6 +69,20 @@ angular.module('foundryApp')
             ipVersion: 'IPV4',
             type: 'PUBLIC'
         }];
+    };
+
+    $scope.addContainerToTemplate = function (template, res) {
+        template['resources'][res.container_name]                                       = {};
+        template['resources'][res.container_name]['type']                               = res.resType;
+        template['resources'][res.container_name]['properties']                         = {};
+        template['resources'][res.container_name]['properties']['X-Container-Meta']     = {};
+        template['resources'][res.container_name]['properties']['name']                 = res.container_name;
+        if (res.CDN) {
+            template['resources'][res.container_name]['properties']['X-Container-Meta']['X-CDN-Enabled'] = true;
+            template['resources'][res.container_name]['properties']['X-Container-Meta']['X-TTL'] = 10000;
+        }
+        template['resources'][res.container_name]['properties']['X-Container-Read']     = res.aclRead || '';
+        template['resources'][res.container_name]['properties']['X-Container-Write']    = res.aclRead || '';
     };
 
     $scope.getJSON = function () {
