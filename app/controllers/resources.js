@@ -84,7 +84,7 @@ angular.module('foundryApp')
         var cntObj                  = {};
         cntObj['resType']           = $rootScope.resourceTypes.swift;
         cntObj['container_name']    = $scope.container.container_name;
-        cntObj['CDN']               = $scope.container.CDN;
+        //cntObj['CDN']               = $scope.container.CDN; // not currently possible via Orchestration
         cntObj['aclRead']           = $scope.container.aclRead;
         cntObj['aclWrite']          = $scope.container.aclWrite;
         $rootScope.containers.push(cntObj);

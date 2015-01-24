@@ -75,12 +75,7 @@ angular.module('foundryApp')
         template['resources'][res.container_name]                                       = {};
         template['resources'][res.container_name]['type']                               = res.resType;
         template['resources'][res.container_name]['properties']                         = {};
-        template['resources'][res.container_name]['properties']['X-Container-Meta']     = {};
         template['resources'][res.container_name]['properties']['name']                 = res.container_name;
-        if (res.CDN) {
-            template['resources'][res.container_name]['properties']['X-Container-Meta']['X-CDN-Enabled'] = true;
-            template['resources'][res.container_name]['properties']['X-Container-Meta']['X-TTL'] = 10000;
-        }
         template['resources'][res.container_name]['properties']['X-Container-Read']     = res.aclRead || '';
         template['resources'][res.container_name]['properties']['X-Container-Write']    = res.aclRead || '';
     };
