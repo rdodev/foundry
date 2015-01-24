@@ -77,7 +77,7 @@ angular.module('foundryApp')
         template['resources'][res.container_name]['properties']                         = {};
         template['resources'][res.container_name]['properties']['name']                 = res.container_name;
         template['resources'][res.container_name]['properties']['X-Container-Read']     = res.aclRead || '';
-        template['resources'][res.container_name]['properties']['X-Container-Write']    = res.aclRead || '';
+        template['resources'][res.container_name]['properties']['X-Container-Write']    = res.aclWrite || '';
     };
 
     $scope.getJSON = function () {

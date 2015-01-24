@@ -52,13 +52,12 @@ describe('TemplateCtrl Unit Test', function() {
   describe('addContainerToTemplate', function () {
     var template, res;
     template = {resources: {}};
-    res = {container_name: 'cname', CDN: true};
+    res = {container_name: 'cname', aclRead: 'uno, dos, tres'};
     it('should populate template object correctly', function () {
       scope.addContainerToTemplate(template, res);
       expect(template['resources'][res.container_name]['properties']['name']).toEqual('cname');
-      expect(template['resources'][res.container_name]['properties']['X-Container-Meta']['X-CDN-Enabled']).toEqual(true);
       expect(template['resources'][res.container_name]['properties']['X-Container-Write']).toEqual('');
-      expect(template['resources'][res.container_name]['properties']['X-Container-Read']).toEqual('');
+      expect(template['resources'][res.container_name]['properties']['X-Container-Read']).toMatch(/uno/);
     });
   });
 
