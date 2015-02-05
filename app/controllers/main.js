@@ -4,9 +4,8 @@
 'use strict';
 
 angular.module('foundryApp')
-  .controller('MainCtrl', function($scope, $rootScope, $location) {
+  .controller('MainCtrl', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
     
-
     /* resource types */ 
     $rootScope.resourceTypes = {
         nova:   'OS::Nova::Server',
@@ -44,4 +43,4 @@ angular.module('foundryApp')
             $location.path('/');
         }
     };
-});
+}]);

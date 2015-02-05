@@ -4,7 +4,8 @@
 'use strict';
 
 angular.module('foundryApp')
-  .controller('ResourcesCtrl', function($scope, $rootScope, $location) {
+  .controller('ResourcesCtrl', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
+
     /* data to populate dropdowns */
     $scope.images   =   
         {
@@ -117,4 +118,4 @@ angular.module('foundryApp')
         };
     };
     
-});
+}]);
