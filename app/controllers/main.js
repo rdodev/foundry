@@ -5,6 +5,15 @@
 
 angular.module('foundryApp')
   .controller('MainCtrl', function($scope, $rootScope, $location) {
+    
+
+    /* resource types */ 
+    $rootScope.resourceTypes = {
+        nova:   'OS::Nova::Server',
+        lb:     'Rackspace::Cloud::LoadBalancer',
+        swift:  'OS::Swift::Container',
+        trove:  'OS::Trove::Instance' 
+    };
 
     $scope.init = function () {
         if (!$rootScope.template) {
@@ -15,6 +24,7 @@ angular.module('foundryApp')
         $rootScope.servers      = [];
         $rootScope.lbs          = [];
         $rootScope.containers   = [];
+        $rootScope.dbs          = [];
         $rootScope.resources    = [];
     };
 
@@ -30,6 +40,7 @@ angular.module('foundryApp')
             $rootScope.lbs          = [];
             $rootScope.resources    = [];
             $rootScope.containers   = [];
+            $rootScope.dbs          = [];
             $location.path('/');
         }
     };
